@@ -1,3 +1,2 @@
 typer
 requests
-ctypes
