@@ -1,0 +1,17 @@
+rm -rf build/
+rm -rf bingo_cli.egg-info/
+rm -rf bingo_cli_test.egg-info/
+rm -rf dist/
+
+python3 setup.py build
+python3 setup.py install
+python3 setup.py sdist
+python3 setup.py bdist_wheel
+
+#test upload
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
+
+# test 
+pip install -i https://test.pypi.org/simple/ bingo-cli-test --user --no-cache
