@@ -119,48 +119,50 @@ def download_wallpaper(day: int = 0,
 
 def set_wallpaper_windows(image_path):
     SPI_SETDESKWALLPAPER = 20
-    try:
-        ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, image_path, 3)
-        print("{}{}OK: Wallpaper set!".format(
-            colors.OKGREEN,
-            colors.BOLD,
-            colors.ENDC
-        ))
-        exit(0)
-    except:
-        print("{}{}ERROR: Something went wrong setting wallpaper!{}".format(
-            colors.FAIL,
-            colors.BOLD,
-            colors.ENDC
-        ))
-        exit(1)
+    # try:
+    ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, image_path, 3)
+    print("{}{}OK: Wallpaper set!{}".format(
+        colors.OKGREEN,
+        colors.BOLD,
+        colors.ENDC
+    ))
+    exit(0)
+
+    # except:
+        # print("{}{}ERROR: Something went wrong setting wallpaper!{}".format(
+        #     colors.FAIL,
+        #     colors.BOLD,
+        #     colors.ENDC
+        # ))
+        # exit(1)
 
 def set_wallpaper_linux(image_path):
     desktop_env = os.environ.get("XDG_CURRENT_DESKTOP")
     
     if desktop_env and "GNOME" in desktop_env:
-        try:
-            os.system(f"gsettings set org.gnome.desktop.background picture-uri file://{image_path}")
-            print("{}{}OK: Wallpaper set on gnome environment!".format(
-            colors.OKGREEN,
-            colors.BOLD,
-            colors.ENDC
-            ))
-            exit(0)
-        except:
-            print("{}{}ERROR: Something went wrong setting wallpaper!{}".format(
-                colors.FAIL,
-                colors.BOLD,
-                colors.ENDC
-            ))
-            exit(1)
+        # try:
+        os.system(f"gsettings set org.gnome.desktop.background picture-uri file://{image_path}")
+        print("{}{}OK: Wallpaper set on gnome environment!".format(
+        colors.OKGREEN,
+        colors.BOLD,
+        colors.ENDC
+        ))
+        exit(0)
+
+        # except:
+        #     print("{}{}ERROR: Something went wrong setting wallpaper!{}".format(
+        #         colors.FAIL,
+        #         colors.BOLD,
+        #         colors.ENDC
+        #     ))
+        #     exit(1)
             
     elif os.path.isfile("/usr/bin/feh"):
         os.system(f"feh --bg-fill {image_path}")
     elif os.path.isfile("/usr/bin/nitrogen"):
         os.system(f"nitrogen --set-auto {image_path}")
     else:
-        print("{}{}ERROR: Unsupported desktop environment or wallpaper setting tool!{]}".format(
+        print("{}{}ERROR: Unsupported desktop environment or wallpaper setting tool!{}".format(
             colors.FAIL,
             colors.BOLD,
             colors.ENDC
@@ -176,7 +178,7 @@ def main(day: int = typer.Option(0, help="Day ranging from 0-6. 0 is today, 6 is
         uhd: bool = typer.Option(True, help="Download images in ulta HD (4k) resolutions"),
         country: str = typer.Option("US", help="Bing service country"),
         path: str = typer.Option(os.path.expanduser("~/Desktop"), help="Path to save the wallpaper"),
-        set: bool = typer.Option(False, help="Set the image as wallpaper."),
+        set: bool = typer.Option(True, help="Set the image as wallpaper."),
         version: bool = typer.Option(False, help="Show app version and exit.")
         ):
     """
