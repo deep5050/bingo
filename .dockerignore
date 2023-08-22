@@ -1,0 +1,37 @@
+bingo.egg-info/
+bingo_cli.egg-info /
+# Ignore files and directories commonly excluded
+.git
+.svn
+.idea
+.vscode
+__pycache__
+
+# Ignore specific files
+Dockerfile
+docker-compose.yml
+*.log
+
+# Ignore temporary or build files
+*.tmp
+*.bak
+*.swp
+*.pyc
+*.pyo
+*.class
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore compiled assets
+dist/
+build/
+*.exe
+*.dll
+
+# Ignore test and documentation files
+*.test
+*.tests
+*.doc
+*.docs
+*.md
