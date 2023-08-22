@@ -1,5 +1,5 @@
 <p align=center>
-<img src="logo.svg" align=center>
+<img src="https://user-images.githubusercontent.com/27947066/262326988-3ba4cf4f-0552-493b-95b7-fd75b86ccfb6.png" align=center>
 <h2 align=center> BINGO! </h2>
 <p align=center> A Bing wallpaper downloader utility </p>
 
@@ -27,7 +27,7 @@ deep@deep$ bingo --help
 │ --day                                     INTEGER                        Day ranging from 0-6. 0 is     │
 │                                                                          today, 6 is a week ago.        │
 │                                                                          [default: 0]                   │
-│ --today                 --no-today                                       Download todays's wallpaper.   │
+│ --today                 --no-today                                       Download today's wallpaper.   │
 │                                                                          [default: no-today]            │
 │ --yesterday             --no-yesterday                                   Download yesterday's wallpaper │
 │                                                                          [default: no-yesterday]        │
