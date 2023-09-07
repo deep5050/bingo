@@ -6,7 +6,9 @@
  <p align=center>
 <img width="500px" alt="UPI" src="https://user-images.githubusercontent.com/27947066/235618869-8c9d9bce-096d-469e-8f61-c29cc01eacc3.png">
 </p>
-
+<p align=center>
+<img align=center src=https://img.shields.io/pypi/dm/bingo-cli?style=for-the-badge>
+ </p>
 </p>
 
 # Install
